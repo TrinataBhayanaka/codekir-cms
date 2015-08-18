@@ -10,10 +10,9 @@ $EXCEL[0]['filetype'] = array('application/ms-excel', 'application/vnd.ms-excel'
 /* SMARTY CONFIG */
 
 $SMARTY[0]['template'] = APPPATH. 'view/';
-$SMARTY[0]['cache'] = APP.LIBS.'smarty/cache';
-$SMARTY[0]['config'] = APP.LIBS.'smarty/configs';
-$SMARTY[0]['logs'] = APP.LOGS;
+$SMARTY[0]['cache'] = CODEKIR_LIBS.'smarty/cache';
+$SMARTY[0]['config'] = CODEKIR_LIBS.'smarty/configs';
+$SMARTY[0]['logs'] = CODEKIR_CACHE;
 
-// echo '<pre>';
-// print_r($SMARTY);exit;
+
 ?>

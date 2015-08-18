@@ -3,3 +3,4 @@ applications/default/config/config.php
 applications/default/config/access.php
 applications/admin/config/config.php
 applications/admin/index.php
+applications/admin/APPLOGS/*

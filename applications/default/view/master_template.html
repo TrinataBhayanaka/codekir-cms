@@ -1,25 +1,8 @@
-{include file="meta.html"}
-<body>
+{include file="theme/bonfire/meta.html"}
+{include file="theme/bonfire/header.html"}
 
-
-	{if $page.page!='login'}
-    <div id="wrapper">
-		
-		{if $page.page!='setting' and $page.function!='setCategory'} 
-
-			{include file="menu.html"}
-		{/if}
-
-    {/if}    
-	
-	
 		{$content}
 		
 		
-	{if $page.page!='login'}	
-	</div>
-	{/if} 
-
-
-	{include file="footer.html"}
+{include file="theme/bonfire/footer.html"}
 	

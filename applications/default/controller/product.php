@@ -1,6 +1,6 @@
 <?php
 
-class home extends Controller {
+class product extends Controller {
 	
 	var $models = FALSE;
 	var $view;
@@ -22,7 +22,13 @@ class home extends Controller {
 	function index(){
 
 		// pr($_SESSION);
-    	return $this->loadView('theme/bonfire/home');
+    	return $this->loadView('theme/bonfire/product');
+    }
+
+    function detail(){
+
+		// pr($_SESSION);
+    	return $this->loadView('theme/bonfire/product_detail');
     }
 	
 	function test()

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2015-08-18 12:52:28
+<?php /* Smarty version Smarty-3.1.15, created on 2015-08-18 13:06:47
          compiled from "view/template/meta.html" */ ?>
 <?php /*%%SmartyHeaderCode:92316568155d2be7236ebf0-13395488%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'c083f2e3b03c0b8b2f9a3de07be2aa7ad1fc1ecd' => 
     array (
       0 => 'view/template/meta.html',
-      1 => 1439877146,
+      1 => 1439877610,
       2 => 'file',
     ),
   ),
@@ -29,7 +29,15 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
 	<title>Admin | CMS CODEKIR</title>
+=======
+<<<<<<< HEAD
+	<title>Administration</title>
+=======
+	<title>Admin | E-Learning BSN</title>
+>>>>>>> 99835b404620cae0e1afa4d7098dac45d1c2c220
+>>>>>>> fee896a4e5195819250f12a4d442f49d673cb1bc
 
 
 	<!--STYLESHEET-->

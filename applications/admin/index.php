@@ -2,8 +2,8 @@
 session_start();
 
 
-define ('CODEKIR_ROOTPATH', '/home/ovancop/Data/htdocs/codekir-cms/');
-define ('CODEKIR_PACKAGE', '/home/ovancop/Data/htdocs/codekir/new-codekir/loader/');
+define ('CODEKIR_ROOTPATH', '/home/erjoned/Data/xampp/htdocs/codekir-cms/');
+define ('CODEKIR_PACKAGE', '/home/erjoned/Data/xampp/htdocs/new-codekir/loader/');
 
 define ('CODEKIR_APPPATH', CODEKIR_ROOTPATH . 'applications/default/');
 define ('CODEKIR_ADMINPATH', CODEKIR_ROOTPATH . 'applications/admin/');

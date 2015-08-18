@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2015-08-18 12:51:00
+<?php /* Smarty version Smarty-3.1.15, created on 2015-08-18 13:08:55
          compiled from "view/template/header.html" */ ?>
 <?php /*%%SmartyHeaderCode:28780712455d2be7243f1a6-47677042%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'bd2c231b283d3fcb875fe8fd1681f91e98aa46e5' => 
     array (
       0 => 'view/template/header.html',
-      1 => 1439877000,
+      1 => 1439877610,
       2 => 'file',
     ),
   ),
@@ -38,13 +38,18 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 				<img src="<?php echo $_smarty_tpl->tpl_vars['basedomain']->value;?>
 images/logo.png" alt="Logo" class="brand-icon">
 				<div class="brand-title">
+<<<<<<< HEAD
 					<span class="brand-text">CMS CODEKIR</span>
+=======
+
+					<span class="brand-text">Administration</span>
+
+>>>>>>> fee896a4e5195819250f12a4d442f49d673cb1bc
 				</div>
 			</a>
 		</div>
 		<!--================================-->
 		<!--End brand logo & name-->
-
 
 		<!--Navbar Dropdown-->
 		<!--================================-->
@@ -60,6 +65,7 @@ images/logo.png" alt="Logo" class="brand-icon">
 				</li>
 				<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 				<!--End Navigation toogle button-->
+
 
 
 				<!--Messages Dropdown-->
@@ -158,6 +164,7 @@ images/ava/av2.png" alt="Profile Picture" class="img-circle img-sm">
 
 				
 
+
 			</ul>
 			<ul class="nav navbar-top-links pull-right">
 
@@ -183,12 +190,14 @@ images/ava/av1.png" alt="Profile Picture">
 									<i class="fa fa-user fa-fw fa-lg"></i> Profile
 								</a>
 							</li>
+
 							<!-- <li>
 								<a href="#">
 									<span class="badge badge-danger pull-right">9</span>
 									<i class="fa fa-envelope fa-fw fa-lg"></i> Messages
 								</a>
 							</li> -->
+
 							<li>
 								<a href="#">
 									<span class="label label-success pull-right">Upcoming</span>

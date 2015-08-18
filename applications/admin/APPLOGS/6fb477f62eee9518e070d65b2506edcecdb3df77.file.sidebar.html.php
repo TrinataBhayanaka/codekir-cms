@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2015-08-18 12:52:08
+<?php /* Smarty version Smarty-3.1.15, created on 2015-08-18 13:08:55
          compiled from "view/template/sidebar.html" */ ?>
 <?php /*%%SmartyHeaderCode:205115394155d2be72462469-59088883%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '6fb477f62eee9518e070d65b2506edcecdb3df77' => 
     array (
       0 => 'view/template/sidebar.html',
-      1 => 1439877122,
+      1 => 1439877337,
       2 => 'file',
     ),
   ),
@@ -73,8 +73,11 @@ home">
 			
 							<!--Submenu-->
 							<ul class="collapse <?php if ($_smarty_tpl->tpl_vars['page']->value['page']=='news') {?>in<?php }?>">
+
 								<li class="<?php if ($_smarty_tpl->tpl_vars['page']->value['function']=='addnews') {?>active-link<?php }?>"><a href="<?php echo $_smarty_tpl->tpl_vars['basedomain']->value;?>
-news/addnews">Add PRODUCT</a></li>
+news/addnews">Category Product</a></li>
+								<li class="<?php if ($_smarty_tpl->tpl_vars['page']->value['function']=='addnews') {?>active-link<?php }?>"><a href="<?php echo $_smarty_tpl->tpl_vars['basedomain']->value;?>
+news/addnews">Add Product</a></li>
 								<li class="<?php if ($_smarty_tpl->tpl_vars['page']->value['page']=='news'&&$_smarty_tpl->tpl_vars['page']->value['function']=='index') {?>active-link<?php }?>"><a href="<?php echo $_smarty_tpl->tpl_vars['basedomain']->value;?>
 news">Product List</a></li>
 							</ul>
@@ -94,6 +97,38 @@ home/glosariumlist">
 								<i class="fa fa-book"></i>
 								<span class="menu-title">Customer</span>
 							</a>
+						</li>
+						<li>
+							<a href="#">
+								<i class="fa fa-newspaper-o"></i>
+								<span class="menu-title">Blog</span>
+								<i class="arrow"></i>
+							</a>
+			
+							<!--Submenu-->
+							<ul class="collapse <?php if ($_smarty_tpl->tpl_vars['page']->value['page']=='news') {?>in<?php }?>">
+
+								<li class="<?php if ($_smarty_tpl->tpl_vars['page']->value['function']=='addnews') {?>active-link<?php }?>"><a href="<?php echo $_smarty_tpl->tpl_vars['basedomain']->value;?>
+news/addnews">Add Blog</a></li>
+								<li class="<?php if ($_smarty_tpl->tpl_vars['page']->value['page']=='news'&&$_smarty_tpl->tpl_vars['page']->value['function']=='index') {?>active-link<?php }?>"><a href="<?php echo $_smarty_tpl->tpl_vars['basedomain']->value;?>
+news">Blog List</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="#">
+								<i class="fa fa-newspaper-o"></i>
+								<span class="menu-title">Theme & Design</span>
+								<i class="arrow"></i>
+							</a>
+			
+							<!--Submenu-->
+							<ul class="collapse <?php if ($_smarty_tpl->tpl_vars['page']->value['page']=='news') {?>in<?php }?>">
+
+								<li class="<?php if ($_smarty_tpl->tpl_vars['page']->value['function']=='addnews') {?>active-link<?php }?>"><a href="<?php echo $_smarty_tpl->tpl_vars['basedomain']->value;?>
+news/addnews">Setting Theme</a></li>
+								<li class="<?php if ($_smarty_tpl->tpl_vars['page']->value['page']=='news'&&$_smarty_tpl->tpl_vars['page']->value['function']=='index') {?>active-link<?php }?>"><a href="<?php echo $_smarty_tpl->tpl_vars['basedomain']->value;?>
+news">Menu</a></li>
+							</ul>
 						</li>
 						
 						

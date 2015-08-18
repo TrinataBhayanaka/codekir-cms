@@ -5,10 +5,10 @@ session_start();
 define ('CODEKIR', 'Version 1.0');
 
 /* define app path */
-define ('CODEKIR_ROOTPATH', '/home/erjoned/Data/xampp/htdocs/codekir-cms/');
+define ('CODEKIR_ROOTPATH', '/home/ovancop/Data/htdocs/codekir-cms/');
 
 /* define engine path */
-define ('CODEKIR_PACKAGE', '/home/erjoned/Data/xampp/htdocs/new-codekir/loader/');
+define ('CODEKIR_PACKAGE', '/home/ovancop/Data/htdocs/codekir/new-codekir/loader/');
 
 define ('debug', true);
 /* 

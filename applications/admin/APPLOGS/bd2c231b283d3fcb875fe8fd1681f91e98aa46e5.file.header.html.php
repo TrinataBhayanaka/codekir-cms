@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2015-08-18 13:08:55
+<?php /* Smarty version Smarty-3.1.15, created on 2015-08-18 13:13:36
          compiled from "view/template/header.html" */ ?>
 <?php /*%%SmartyHeaderCode:28780712455d2be7243f1a6-47677042%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'bd2c231b283d3fcb875fe8fd1681f91e98aa46e5' => 
     array (
       0 => 'view/template/header.html',
-      1 => 1439877610,
+      1 => 1439878264,
       2 => 'file',
     ),
   ),
@@ -38,13 +38,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 				<img src="<?php echo $_smarty_tpl->tpl_vars['basedomain']->value;?>
 images/logo.png" alt="Logo" class="brand-icon">
 				<div class="brand-title">
-<<<<<<< HEAD
-					<span class="brand-text">CMS CODEKIR</span>
-=======
-
-					<span class="brand-text">Administration</span>
-
->>>>>>> fee896a4e5195819250f12a4d442f49d673cb1bc
+					<span class="brand-text">CMS TOKO</span>
 				</div>
 			</a>
 		</div>

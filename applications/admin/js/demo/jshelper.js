@@ -177,9 +177,10 @@ function isNumber(evt) {
 		var status = exp[1];
 		
 		
-		$.post(basedomain+"home/ajax_update_status_testimoni", { id: id, status: status } );
+
+		$.post( basedomain+"home/ajax_update_status_testimoni", { id: id, status: status } );
 		
-		// return false;
+
 		// alert(exp[0]);
 		var doSomething = setTimeout(function(){
 			clearTimeout(doSomething);

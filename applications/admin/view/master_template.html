@@ -1,4 +1,8 @@
+
+
 {include file="view/template/meta.html"}
+
+
 <body>
 	<script>
 		var basedomain = "{$basedomain}";
@@ -6,6 +10,9 @@
 	
 	{if ($admin)}
 	<div id="container" class="effect mainnav-lg">
+
+		
+
 			
 			{include file= "view/template/header.html"} 
 
@@ -14,6 +21,7 @@
 				<!--CONTENT CONTAINER-->
 				<!--===================================================-->
 				<div id="content-container">
+					
 					
 					{$content}
 
@@ -29,4 +37,6 @@
 	{else}
 		{$content}
 		{include file= "view/template/jsplugin.html"}
+
 	{/if}			
+

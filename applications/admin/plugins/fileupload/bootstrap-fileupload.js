@@ -1,3 +1,4 @@
+
 /* ===========================================================
  * bootstrap-fileupload.js j2
  * http://jasny.github.com/bootstrap/javascript.html#fileupload
@@ -167,3 +168,4 @@
   })
 
 }(window.jQuery);
+

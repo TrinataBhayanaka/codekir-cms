@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2015-08-18 12:11:14
+<?php /* Smarty version Smarty-3.1.15, created on 2015-08-18 12:52:28
          compiled from "view/template/meta.html" */ ?>
 <?php /*%%SmartyHeaderCode:92316568155d2be7236ebf0-13395488%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'c083f2e3b03c0b8b2f9a3de07be2aa7ad1fc1ecd' => 
     array (
       0 => 'view/template/meta.html',
-      1 => 1438853750,
+      1 => 1439877146,
       2 => 'file',
     ),
   ),
@@ -15,13 +15,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.15',
+  'unifunc' => 'content_55d2be72433fc6_48718772',
   'variables' => 
   array (
     'basedomain' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.15',
-  'unifunc' => 'content_55d2be72433fc6_48718772',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_55d2be72433fc6_48718772')) {function content_55d2be72433fc6_48718772($_smarty_tpl) {?><!DOCTYPE html>
 <html lang="en">
@@ -29,7 +29,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Admin | E-Learning BSN</title>
+	<title>Admin | CMS CODEKIR</title>
 
 
 	<!--STYLESHEET-->

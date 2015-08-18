@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2015-08-18 12:11:14
+<?php /* Smarty version Smarty-3.1.15, created on 2015-08-18 12:51:00
          compiled from "view/template/header.html" */ ?>
 <?php /*%%SmartyHeaderCode:28780712455d2be7243f1a6-47677042%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'bd2c231b283d3fcb875fe8fd1681f91e98aa46e5' => 
     array (
       0 => 'view/template/header.html',
-      1 => 1438853750,
+      1 => 1439877000,
       2 => 'file',
     ),
   ),
@@ -15,14 +15,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.15',
+  'unifunc' => 'content_55d2be72458cd6_48975023',
   'variables' => 
   array (
     'basedomain' => 0,
     'admin' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.15',
-  'unifunc' => 'content_55d2be72458cd6_48975023',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_55d2be72458cd6_48975023')) {function content_55d2be72458cd6_48975023($_smarty_tpl) {?>
 <!--NAVBAR-->
@@ -38,7 +38,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 				<img src="<?php echo $_smarty_tpl->tpl_vars['basedomain']->value;?>
 images/logo.png" alt="Logo" class="brand-icon">
 				<div class="brand-title">
-					<span class="brand-text">E-Learning BSN</span>
+					<span class="brand-text">CMS CODEKIR</span>
 				</div>
 			</a>
 		</div>

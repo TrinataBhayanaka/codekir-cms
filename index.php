@@ -10,6 +10,7 @@ define ('CODEKIR_ROOTPATH', '/home/ovancop/Data/htdocs/codekir-cms/');
 /* define engine path */
 define ('CODEKIR_PACKAGE', '/home/ovancop/Data/htdocs/codekir/new-codekir/loader/');
 
+define ('debug', true);
 /* 
 	define loader path, do not edit this path
 */

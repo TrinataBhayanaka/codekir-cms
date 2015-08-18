@@ -23,7 +23,7 @@ $CONFIG['admin']['app_url'] = 'http://localhost/codekir-cms/';
 $CONFIG['admin']['base_url'] = 'http://localhost/codekir-cms/applications/admin/';
 $CONFIG['admin']['root_path'] = $_SERVER['DOCUMENT_ROOT'].'/codekir-cms/applications/admin';
 
-$CONFIG['admin']['upload_path'] = $_SERVER['DOCUMENT_ROOT'].'/codekir-cms/applications/public_assets/';
+$CONFIG['admin']['upload_path'] = $_SERVER['DOCUMENT_ROOT'].'/codekir-cms/public_assets/';
 
 $CONFIG['admin']['max_filesize'] = 2097152;
 

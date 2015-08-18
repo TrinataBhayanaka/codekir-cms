@@ -21,8 +21,8 @@ class home extends Controller {
 	public function index(){
 		
 		// pr($_SESSION);
-		echo 'mausk';
-		return $this->loadView('home');
+		//echo 'mausk';
+		return $this->loadView('home/home');
 
 	}
 	

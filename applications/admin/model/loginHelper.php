@@ -16,9 +16,9 @@ class loginHelper extends Database {
 		
 		// pr($data);		
 		
-		$sql = "SELECT * FROM florakb_person WHERE username = '{$username}' LIMIT 1";
+		$sql = "SELECT * FROM ck_user WHERE username = '{$username}' LIMIT 1";
 		// pr($sql);
-		$res = $this->fetch($sql,0,1);
+		$res = $this->fetch($sql,0);
 		
 		if ($res){
 			$salt = sha1($password.$res['salt']);

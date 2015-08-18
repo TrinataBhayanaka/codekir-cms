@@ -1,34 +1,37 @@
 
-{include file="view/meta.html"}
+{include file="view/template/meta.html"}
+
 <body>
-	<!-- RUNNING GLOBAL VAR -->
 	<script>
 		var basedomain = "{$basedomain}";
 	</script>
 	
-	
-	<div id="wrapper">
-	<!-- HEADER -->
+	{if ($admin)}
+	<div id="container" class="effect mainnav-lg">
 		
-		{if ($admin)}
 
-		{include file= "view/header.html"} 
-		{include file= "view/jsplugin.html"} 
-		{include file= "view/top-bar.html"} 
-		{include file= "view/sidebar.html"} 
-		
-		<div id="content">
-			{$content}
-		</div>
+			
+			{include file= "view/template/header.html"} 
 
-		
-		{else}
-			{$content}
+			<div class="boxed">
 
-		{/if}
-		
-	
+				<!--CONTENT CONTAINER-->
+				<!--===================================================-->
+				<div id="content-container">
+					
+					
+					{$content}
+
+				</div>
+			{include file= "view/template/sidebar.html"}
+
+			{include file= "view/template/top-bar.html"}
+
+			</div>
+			{include file= "view/template/footer.html"}
+			{include file= "view/template/jsplugin.html"}
 	</div>
-
-</body> 
-</html>
+	{else}
+		{$content}
+		{include file= "view/template/jsplugin.html"}
+	{/if}			

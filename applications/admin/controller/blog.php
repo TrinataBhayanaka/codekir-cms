@@ -42,11 +42,7 @@ class blog extends Controller {
 	public function inputBlog(){
 		
 		global $CONFIG;
-		pr($CONFIG);
-		// exit;
-		pr($_FILES);
-
-		pr($_POST);
+		
 		if(isset($_POST)){
             // validasi value yang masuk
            $x = form_validation($_POST);
@@ -62,11 +58,11 @@ class blog extends Controller {
 						// if($x['gallerytype'] == '9'){
 						// 	$path_upload = 'gallery/images';
 						// }else{
-							$path_upload = 'upload';
+							$path_upload = '';
 						// }
-						pr($_FILES);
-						pr($_FILES);
-						$image = uploadFile('file_image',$path_upload,'image');
+						// pr($_FILES);
+						// pr($_FILES);
+						$image = uploadFile('title',$path_upload,'image');
 						pr($image);
 						exit;
 						foreach ($_FILES['file_image']['name'] as $filekey => $file){

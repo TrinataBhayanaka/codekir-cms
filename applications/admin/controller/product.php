@@ -24,6 +24,10 @@ class product extends Controller {
 		$this->marticle = $this->loadModel('marticle');
 		$this->mquiz = $this->loadModel('mquiz');
 		$this->mcourse = $this->loadModel('mcourse');
+		
+		//by akbar
+		
+		$this->mcategory = $this->loadModel('categoryHelper');
 	}
 	
 	public function index(){
@@ -43,7 +47,7 @@ class product extends Controller {
 	public function formCatProduct(){
 		
 
-		return $this->loadView('product/addProduct');
+		return $this->loadView('product/addCategory');
 
 	}
 	public function listCatProduct(){
@@ -51,6 +55,15 @@ class product extends Controller {
 
 		return $this->loadView('product/listCatProduct');
 
+	}
+	public function addCatProduct() {
+		global $basedomain;
+		
+		$getCatProduct = $this->mcategory->addCategory();
+		
+		 if ($getCatProduct){
+		 	return $this->loadView('product/listCatProduct');
+		 }
 	}
 	
 

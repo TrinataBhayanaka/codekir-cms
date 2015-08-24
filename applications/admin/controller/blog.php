@@ -21,9 +21,7 @@ class blog extends Controller {
 	{
 		
 		$this->contentHelper = $this->loadModel('contentHelper');
-		$this->marticle = $this->loadModel('marticle');
-		$this->mquiz = $this->loadModel('mquiz');
-		$this->mcourse = $this->loadModel('mcourse');
+		$this->blogModel = $this->loadModel('blogModel');
 	}
 	
 	public function index(){
@@ -43,9 +41,12 @@ class blog extends Controller {
 		
 		global $CONFIG;
 		
+           pr($_FILES);
+           // pr($_POST);
 		if(isset($_POST)){
             // validasi value yang masuk
            $x = form_validation($_POST);
+           // pr($x);
 		   try
 		   {
 		   		if(isset($x) && count($x) != 0)
@@ -58,30 +59,29 @@ class blog extends Controller {
 						// if($x['gallerytype'] == '9'){
 						// 	$path_upload = 'gallery/images';
 						// }else{
-							$path_upload = '';
+							// $path_upload = 'uploadBlog';
 						// }
 						// pr($_FILES);
 						// pr($_FILES);
-						$image = uploadFile('title',$path_upload,'image');
-						pr($image);
-						exit;
-						foreach ($_FILES['file_image']['name'] as $filekey => $file){
+						$image = uploadFile('userfile',$path_upload,'image');
+						// pr($image);
+						
+						foreach ($_FILES['userfile'] as $filekey => $file){
+						// pr($image);
+						// pr($file);
 							$x['image_url'] = $CONFIG['admin']['app_url'].$image[$filekey]['folder_name'].$image[$filekey]['full_name'];
-							$x['image'] = $image[$filekey]['full_name'];
-							$data = $this->gallery->gallery_inp($x);
+							$x['image'] = $image['full_name'];
+							$data = $this->blogModel->InpBlog($x);
+
 						}
 					}
 					
 		   		}
 			   	
 		   }catch (Exception $e){}
-        
-        $redirect = $CONFIG['admin']['base_url'].'home';
-        if(isset($x['gallerytype'])){
-            if($x['gallerytype']=='9'){
-				$redirect = $CONFIG['admin']['base_url'].'gallery/album/?album='.$x['otherid'];
-			}
-        }
+        // exit;
+        $redirect = $CONFIG['admin']['base_url'].'blog/addBlog';
+       
         
         echo "<script>alert('Data berhasil di simpan');window.location.href='".$redirect."'</script>";
         }

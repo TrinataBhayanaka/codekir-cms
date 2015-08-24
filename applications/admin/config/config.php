@@ -30,7 +30,7 @@ $CONFIG['admin']['max_filesize'] = 2097152;
 $CONFIG['admin']['css'] = CODEKIR_ADMINPATH.'css/';
 $CONFIG['admin']['images'] = CODEKIR_ADMINPATH.'images/';
 $CONFIG['admin']['js'] = CODEKIR_ADMINPATH.'js/';
-
+$CONFIG['admin']['image'] = array('image/jpeg', 'image/pjpeg');
 $basedomain = $CONFIG['admin']['base_url'];
 $app_domain = $CONFIG['admin']['app_url'];
 

@@ -1,5 +1,4 @@
 <?php
-// defined ('TATARUANG') or exit ( 'Forbidden Access' );
 
 class product extends Controller {
 	
@@ -10,6 +9,8 @@ class product extends Controller {
 		parent::__construct();
 
 		global $app_domain;
+		global $basedomain;
+		
 		$this->loadmodule();
 		$this->view = $this->setSmarty();
 		$sessionAdmin = new Session;
@@ -18,15 +19,7 @@ class product extends Controller {
 		$this->view->assign('app_domain',$app_domain);
 	}
 	public function loadmodule()
-	{
-		
-		$this->contentHelper = $this->loadModel('contentHelper');
-		$this->marticle = $this->loadModel('marticle');
-		$this->mquiz = $this->loadModel('mquiz');
-		$this->mcourse = $this->loadModel('mcourse');
-		
-		//by akbar
-		
+	{	
 		$this->mcategory = $this->loadModel('categoryHelper');
 	}
 	
@@ -43,15 +36,39 @@ class product extends Controller {
 		return $this->loadView('product/addProduct');
 
 	}
-
+	
 	public function formCatProduct(){
+		$getParent = $this->mcategory->getParent();
 		
-
+		$this->view->assign('parents', $getParent);
+		
 		return $this->loadView('product/addCategory');
 
 	}
+	
+	public function formEditCatProduct() {
+		// echo $_GET['id'];
+		
+		$getOneCategory = $this->mcategory->getOneCategory($_GET['id']);
+		
+		$getParents = $this->mcategory->getParent();
+		
+		// pr($getOneCategory);
+		
+		$this->view->assign('category', $getOneCategory);
+		
+		$this->view->assign('parents', $getParents);
+		
+		return $this->loadView('product/editCategory');
+	}
+	
 	public function listCatProduct(){
 		
+		$getCatProduct = $this->mcategory->getCategory();
+		
+		//pr ($getCatProduct);
+		
+		$this->view->assign('catProduct', $getCatProduct);
 
 		return $this->loadView('product/listCatProduct');
 
@@ -62,10 +79,36 @@ class product extends Controller {
 		$getCatProduct = $this->mcategory->addCategory();
 		
 		 if ($getCatProduct){
-		 	return $this->loadView('product/listCatProduct');
+		 	redirect($basedomain."product/listCatProduct");
+		 } else {
+		 	echo $getCatProduct;
+			exit();		
 		 }
 	}
-	
+	public function editCatProduct() {
+		global $basedomain;
+		
+		$getCatProduct = $this->mcategory->updateCategory();
+		
+		 if ($getCatProduct){
+		 	redirect($basedomain."product/listCatProduct");
+		 } else {
+		 	echo $getCatProduct;
+			exit();		
+		 }
+	}
+	public function deleteCatProduct() {
+		global $basedomain;
+		
+		$delCat = $this->mcategory->deleteCategory($_GET['id']);
+		
+		if ($delCat){
+		 	redirect($basedomain."product/listCatProduct");
+		 } else {
+		 	echo $delCat;
+			exit();		
+		 }
+	}
 
 	
 }

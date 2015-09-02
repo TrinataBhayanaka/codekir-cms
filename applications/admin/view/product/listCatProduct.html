@@ -36,7 +36,6 @@
 				<a href="{$basedomain}product/formCatProduct/" class="btn btn-lg btn-success">add category</a>
 						<div class="panel-body">
 							<table data-toggle="table"
-								   data-url="{$basedomain}data/bs-table.json"
 								   data-search="true"
 								   data-show-refresh="true"
 								   data-show-toggle="true"
@@ -44,17 +43,36 @@
 								   data-sort-name="id"
 								   data-page-list="[5, 10, 20]"
 								   data-page-size="5"
-								   data-pagination="true" data-show-pagination-switch="true">
+								   data-pagination="true">
 								<thead>
 									<tr>
-										<th data-field="id" data-sortable="true" data-formatter="invoiceFormatter">ID</th>
+										<th data-field="id" data-sortable="true">ID</th>
 										<th data-field="name" data-sortable="true">Name</th>
-										<th data-field="date" data-sortable="true" data-formatter="dateFormatter">Order date</th>
-										<th data-field="amount" data-align="center" data-sortable="true" data-sorter="priceSorter">Balance</th>
-										<th data-field="status" data-align="center" data-sortable="true" data-formatter="statusFormatter">Status</th>
-										<th data-field="track" data-align="center" data-sortable="true" data-formatter="trackFormatter">Tracking Number</th>
+										<th data-field="parent" data-sortable="true" >Parent</th>
+										<th data-field="status" data-align="center" data-sortable="true">Status</th>
+										<th data-align="center">Action</th>
 									</tr>
 								</thead>
+								<tbody>
+									{foreach $catProduct as $val}
+									<tr>
+										<td>{$val.category_id}</td>
+										<td>{$val.name}</td>
+										<td>{$val.parent_id}</td>
+										<td><span class="badge 
+											{if $val.status == 'published'}
+											badge-success
+											{else}
+											badge-warning
+											{/if}
+											">{$val.status}</span></td>
+										<td data-align="center">
+											<a href="{$basedomain}product/formEditCatProduct/?id={$val.category_id}" class="btn btn-info"><span class="glyphicon glyphicon-edit"></span></a>
+											<a href="{$basedomain}product/deleteCatProduct/?id={$val.category_id}" onclick="return confirm('Anda akan menghapus kategori {$val.name}');" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></a>
+										</td>
+									</tr>
+									{/foreach}
+								</tbody>
 							</table>
 						</div>
 					</div>

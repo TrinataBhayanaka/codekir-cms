@@ -25,6 +25,8 @@ $CONFIG['admin']['root_path'] = $_SERVER['DOCUMENT_ROOT'].'/codekir-cms/applicat
 
 $CONFIG['admin']['upload_path'] = $_SERVER['DOCUMENT_ROOT'].'/codekir-cms/public_assets/';
 
+$CONFIG['admin']['upload_theme'] = $_SERVER['DOCUMENT_ROOT'].'/codekir-cms/applications/default/view/theme/';
+
 $CONFIG['admin']['max_filesize'] = 2097152;
 
 $CONFIG['admin']['css'] = CODEKIR_ADMINPATH.'css/';
@@ -33,12 +35,13 @@ $CONFIG['admin']['js'] = CODEKIR_ADMINPATH.'js/';
 $CONFIG['admin']['image'] = array('image/jpeg', 'image/pjpeg');
 $basedomain = $CONFIG['admin']['base_url'];
 $app_domain = $CONFIG['admin']['app_url'];
+$upload_theme=$CONFIG['admin']['upload_theme'];
 
 /* Konfigurasi DB */
 
 $dbConfig[0]['host'] = 'localhost';
 $dbConfig[0]['user'] = 'root';
-$dbConfig[0]['pass'] = '';
+$dbConfig[0]['pass'] = 'jonedganteng';
 $dbConfig[0]['name'] = 'codekir_cms';
 $dbConfig[0]['server'] = 'mysql';
 

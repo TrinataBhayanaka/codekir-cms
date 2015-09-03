@@ -1,0 +1,229 @@
+
+	<script src="{$basedomain}plugins/nestable/jquery.nestable.js"></script>
+<script>
+		{literal}
+
+$(document).ready(function()
+{
+
+    var updateOutput = function(e)
+    {
+        var list   = e.length ? e : $(e.target),
+            output = list.data('output');
+        if (window.JSON) {
+            output.val(window.JSON.stringify(list.nestable('serialize')));//, null, 2));
+        } else {
+            output.val('JSON browser support required for this demo.');
+        }
+    };
+
+    // activate Nestable for list 1
+    $('#nestable').nestable({
+        group: 1
+    })
+    .on('change', updateOutput);
+
+    // activate Nestable for list 2
+    $('#nestable2').nestable({
+        group: 1
+    })
+    .on('change', updateOutput);
+
+    // output initial serialised data
+    updateOutput($('#nestable').data('output', $('#nestable-output')));
+    updateOutput($('#nestable2').data('output', $('#nestable2-output')));
+
+    $('#nestable-menu').on('click', function(e)
+    {
+        var target = $(e.target),
+            action = target.data('action');
+        if (action === 'expand-all') {
+            $('.dd').nestable('expandAll');
+        }
+        if (action === 'collapse-all') {
+            $('.dd').nestable('collapseAll');
+        }
+    });
+
+    $('#nestable3').nestable();
+
+});
+
+		{/literal}
+</script>
+<script type="text/javascript">
+{literal}
+$(document).on('change','#selectpicker',function(){
+		var linkMenu = $(this).val();
+		// alert(linkMenu);
+		
+		if(linkMenu=='0'){
+		// alert(linkMenu);
+				$('#linkMenu').html('<input type="text" placeholder="URL Menu" id="demo-hor-inputemail" class="form-control" name="linkMenu">');
+
+		}else if(linkMenu=='1'){
+		// alert(linkMenu);
+			$.post(basedomain+"menu/getUrl", {linkMenu:linkMenu}, function(data){
+				
+				if (data.status==true) {
+
+					$('#linkMenu').html(data.dataVal);	
+
+				}
+			}, "JSON")
+				
+		}else if(linkMenu=='2'){
+		// alert(linkMenu);
+				$('#linkMenu').html('<input type="hidden" id="demo-hor-inputemail" class="form-control" name="linkMenu" value="blog">');	
+		}else if(linkMenu=='3'){
+		// alert(linkMenu);
+				$('#linkMenu').html('');	
+		}
+	});
+{/literal}
+</script>
+<!--Page Title-->
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<div id="page-title">
+	<h1 class="page-header text-overflow">Setting Menu</h1>
+	
+	<!--Searchbox-->
+	<!-- <div class="searchbox">
+		<div class="input-group custom-search-form">
+			<input type="text" class="form-control" placeholder="Search..">
+			<span class="input-group-btn">
+				<button class="text-muted" type="button"><i class="fa fa-search"></i></button>
+			</span>
+		</div>
+	</div> -->
+</div>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<!--End page title-->
+
+<!--Breadcrumb-->
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<ol class="breadcrumb">
+	<li><a href="{$basedomain}">Home</a></li>
+	<li><a href="{$basedomain}">Menu</a></li>
+	<li class="active">Setting Menu</li>
+</ol>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<!--End breadcrumb-->
+
+<!--Page content-->
+<!--===================================================-->
+<div id="page-content">
+	<div class="row">
+						<div class="col-sm-6">
+							<div class="panel">
+								<div class="panel-heading">
+									<h3 class="panel-title">Sort Order Menu</h3>
+								</div>
+					
+								<!--Block Styled Form -->
+								<!--===================================================-->
+								<div class="cf nestable-lists">
+
+							        <div class="dd" id="nestable">
+							            <ol class="dd-list">
+							            	{foreach $menu as $val}
+							            	{if $val.parent_id=='0'}
+							                <li class="dd-item dd3-item" data-id="{$val.id_menu}">
+							                    <div class="dd-handle dd3-handle">&nbsp;</div><div class="dd3-content">{$val.title_menu} <a href="{$basedomain}menu/edit/?id={$val.id_menu}" style="float:right"><i class="fa fa-pencil-square-o "></i></a></div>
+							                    {if $val.subMenu}
+          									    <ol class="dd-list">
+							            		{foreach $val.subMenu as $valSubmenu}
+							            			 <li class="dd-item dd3-item" data-id="{$valSubmenu.id_menu}"><div class="dd-handle dd3-handle">&nbsp;</div><div class="dd3-content">{$valSubmenu.title_menu}<a href="{$basedomain}menu/edit/?id={$valSubmenu.id_menu}" style="float:right"><i class="fa fa-pencil-square-o "></i></a></div></li>
+
+							            		{/foreach}
+							            		</ol>
+							            		{/if}
+
+							                </li>
+							                {/if}
+							                {/foreach}
+							            </ol>
+							        </div>
+
+								    </div>
+								    <form method="POST" action="{$basedomain}menu/updateSortMenu">
+									    <textarea id="nestable-output" name="jsonMenu" style="display:none"></textarea>
+
+										<div class="panel-footer text-right">
+											<button class="btn btn-info" type="submit">Update</button>
+										</div>
+									</form>
+								<!--===================================================-->
+								<!--End Block Styled Form -->
+					
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<div class="panel">
+								<div class="panel-heading">
+									<h3 class="panel-title">Form Menu</h3>
+								</div>
+					
+								<!--Horizontal Form-->
+								<!--===================================================-->
+								<form class="form-horizontal" method="POST" action="{$basedomain}menu/inputMenu">
+									<div class="panel-body">
+										<div class="form-group">
+											<label class="col-sm-3 control-label" for="demo-hor-inputemail">Title Menu</label>
+											<div class="col-sm-9">
+												<input type="text" placeholder="Title Menu" id="demo-hor-inputemail" name="title" class="form-control">
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="col-sm-3 control-label" for="demo-hor-inputemail">Parent Menu</label>
+											<div class="col-sm-9">
+												<select class="selectpicker" name="parent">
+														<option value="0">-Index-</option>
+													{foreach $menuIndex as $valIndex}
+														<option value="{$valIndex.id_menu}">{$valIndex.title_menu}</option>
+													{/foreach}
+												</select>
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="col-sm-3 control-label" for="demo-hor-inputemail">Link MENU</label>
+											<div class="col-sm-9">
+												<select class="selectpicker" id="selectpicker">
+													<option value="0">URL</option>
+													<option value="1">Page</option>
+													<option value="2">Blog</option>
+													<option value="3">Category Product</option>
+												</select>
+												<div id="linkMenu">
+												<input type="text" placeholder="URL Menu" id="demo-hor-inputemail" name="linkMenu" class="form-control">
+												</div>
+											</div>
+										</div>
+
+										<div class="form-group">
+											<label class="col-sm-3 control-label" for="demo-hor-inputemail">Status</label>
+											<div class="col-sm-9">
+												<select class="selectpicker" name="status">
+													<option value="0">Unpublish</option>
+													<option value="1">Publish</option>
+												</select>
+											</div>
+										</div>
+									</div>
+									<div class="panel-footer text-right">
+										<button class="btn btn-info" type="submit">Save</button>
+									</div>
+								</form>
+								<!--===================================================-->
+								<!--End Horizontal Form-->
+					
+							</div>
+						</div>
+					</div>
+	
+	
+	
+</div>
+<!--===================================================-->
+<!--End page content-->
+

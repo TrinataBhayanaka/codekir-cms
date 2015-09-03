@@ -1,0 +1,5 @@
+<select class="selectpicker" name="linkMenu">
+{foreach $getData as $val}
+<option value="page/?id={$val.id}">{$val.title}</option>
+{/foreach}
+</select>

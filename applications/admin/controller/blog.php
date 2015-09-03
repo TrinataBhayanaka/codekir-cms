@@ -66,14 +66,14 @@ class blog extends Controller {
 						$image = uploadFile('userfile',$path_upload,'image');
 						// pr($image);
 						
-						foreach ($_FILES['userfile'] as $filekey => $file){
+						// foreach ($_FILES['userfile'] as $filekey => $file){
 						// pr($image);
 						// pr($file);
-							$x['image_url'] = $CONFIG['admin']['app_url'].$image[$filekey]['folder_name'].$image[$filekey]['full_name'];
+							$x['image_url'] = $CONFIG['admin']['app_url'].$image[0]['folder_name'].$image[0]['full_name'];
 							$x['image'] = $image['full_name'];
 							$data = $this->blogModel->InpBlog($x);
 
-						}
+						// }
 					}
 					
 		   		}

@@ -57,14 +57,10 @@
 								<!--===================================================-->
 								
 									<div class="panel-body">
-										{foreach $listTheme as $val}
-										<div class="col-md-6 col-lg-3">
-											<h4>{$val.nameFolder}</h4>
-											<a href="#">Active</a> | <a href="#">Uninstall</a>
-										<img src="{$urlTheme}{$val.nameFolder}/image.png" width="200px"/>
-										</div>
-										{/foreach}
 										
+										<h4>{$themeCurrent.option_value} (CURRENT THEME)</h4>
+									<img src="{$urlTheme}{$themeCurrent.option_value}/image.png" width="200px"/>
+																
 									</div>
 								<!--===================================================-->
 								<!--End Horizontal Form-->
@@ -102,6 +98,19 @@
 							<!--End Default Tabs (Left Aligned)-->
 					
 
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-12">
+			{foreach $listTheme as $val}
+			{if $val.nameFolder!=$themeCurrent.option_value}
+			<div class="col-md-6 col-lg-3">
+				<h4>{$val.nameFolder}</h4>
+				<a href="{$basedomain}theme/changeTheme/?value={$val.nameFolder}">Active</a> | <a href="#">Uninstall</a>
+			<img src="{$urlTheme}{$val.nameFolder}/image.png" width="200px"/>
+			</div>
+			{/if}
+			{/foreach}
 		</div>
 	</div>
 	

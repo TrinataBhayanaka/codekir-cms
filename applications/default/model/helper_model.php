@@ -105,7 +105,35 @@ class helper_model extends Database {
         return false;
     }
     */
-    
+    function getCurrentTheme(){
+        $sql = "SELECT * FROM ck_options WHERE option_name = 'current_theme'";
+        $data = $this->fetch($sql,0);
+        // pr($res);
+        if ($data) return $data;
+        return false;
+    }
+    function getMenuData()
+    {
+        // pr($data);
+        // exit;
+        $sql = "SELECT * FROM ck_menu order by ordering";
+        $res = $this->fetch($sql,1);
+        // pr($res);
+        foreach ($res as $key => $value) {
+            if ($value['parent_id']=='0') {
+                $data[$key]=$value;
+
+                foreach ($res as $keysub => $valSub) {
+                    if ($valSub['parent_id']==$value['id_menu']) {
+                        $data[$key]['subMenu'][]=$valSub;
+                    }
+                }
+            }
+        }
+        // pr($data);
+        if ($data) return $data;
+        return false;
+    }
     function logActivity($action='surf', $comment=null)
     {
     	$sql = "SELECT id FROM code_activity WHERE activityValue = '{$action}' LIMIT 1 ";

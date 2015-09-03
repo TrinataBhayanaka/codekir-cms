@@ -22,14 +22,14 @@ class theme extends Controller {
 	{
 		
 		$this->contentHelper = $this->loadModel('contentHelper');
-		$this->themeModel = $this->loadModel('themeModel');
+		$this->themeModel = $this->loadModel('theme_model');
 	}
 	
 	public function index(){
 		global $upload_theme;
 		global $app_domain;
 		// pr($app_domain);
-
+		// exit;
 		$dir = $upload_theme;
 		$files = array_values(array_filter(scandir($dir), function($file) {
 		    return !is_dir($file);
@@ -42,28 +42,34 @@ class theme extends Controller {
 		    // $listTheme[][$file]
 
 		}
-
-		// pr($listTheme);
-		// if (is_dir($dir)){
-
-		//   if ($dh = opendir($dir)){
-		//     while (($file = readdir($dh)) !== false){
-		//       echo "filename:" . $file . "<br>";
-		//     }
-		//     closedir($dh);
-		//   }
-		// }
+		$getTheme=$this->themeModel->getTheme();
+		// pr($getTheme);
 		$urlTheme=$app_domain."applications/default/view/theme/";
 		$this->view->assign('urlTheme',$urlTheme);
 		$this->view->assign('listTheme',$listTheme);
+		$this->view->assign('themeCurrent',$getTheme);
 		return $this->loadView('theme/listTheme');
 
 	}
 
-	public function formAddBlog(){
+	public function changeTheme(){
 		
-
-		return $this->loadView('blog/addBlog');
+		global $basedomain;
+		
+		if($_GET['value']){
+			$change=$this->themeModel->updTheme();
+		}
+		
+		if($change){
+			echo "<script>alert('Change Theme Succes');window.location.href='".$basedomain."theme'</script>";
+			// exit;
+			// redirect($basedomain."theme/index");
+		}
+		// else{
+		// 	// echo "<script>alert('Change Theme failed');window.location.href='".$basedomain."theme'</script>";
+		// 	redirect($basedomain."theme");
+		
+		// }
 
 	}
 	

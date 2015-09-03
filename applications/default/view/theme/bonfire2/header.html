@@ -61,8 +61,24 @@
             <div class="h_menu4">
                 <a class="toggleMenu" href="#">Menu</a>
                 <ul class="nav">
-                    <li class="active"><a href="{$basedomain}"><i> </i>Desktops</a></li>
-                    <li ><a href="#" >Laptops & Notebooks</a>
+                    {foreach $menuData as $valMenu}
+                     {if $valMenu.parent_id=='0'}
+                         <li><a href="{$basedomain}">{$valMenu.title_menu}</a>
+                         {if $valMenu.subMenu}
+                            
+                           <ul class="drop">
+
+                            {foreach $valMenu.subMenu as $valSubmenu}
+                                <li><a href="{$basedomain}">{$valSubmenu.title_menu}</a></li>
+                            {/foreach}
+
+                            </ul>
+                         {/if}
+
+                         </li>
+                     {/if}
+                    {/foreach}
+                  <!--   <li ><a href="#" >Laptops & Notebooks</a>
                         <ul class="drop">
                             <li><a href="{$basedomain}product">Sony(2)</a></li>
                             <li><a href="{$basedomain}product">Android(4)</a></li>
@@ -77,7 +93,7 @@
                         <li><a href="{$basedomain}product" >Software</a></li>
                         <li><a href="{$basedomain}product" >Phones & PDAs </a></li>
                         <li><a href="{$basedomain}product" >  Cameras  </a></li>
-                        <li><a href="{$basedomain}contract" >Contact </a></li>
+                        <li><a href="{$basedomain}contract" >Contact </a></li> -->
                     
                 </ul>
                 <script type="text/javascript" src="{$basedomain}applications/default/assets/js/nav.js"></script>

@@ -100,6 +100,25 @@ class theme_model extends Database {
 		if ($data) return $data;
 		return false;
 	}
-	
+
+	function getTheme(){
+        $sql = "SELECT * FROM ck_options WHERE option_name = 'current_theme'";
+        $data = $this->fetch($sql,0);
+        // pr($res);
+        if ($data) return $data;
+        return false;
+    }
+
+	function updTheme(){
+		// db($_GET['value']);
+		$themename = "{$_GET['value']}";
+		$query = "UPDATE ck_options SET option_value='{$themename}' WHERE option_id=1 AND n_status=1";
+		$result = $this->query($query);
+
+		// db($query);
+		// exit;
+		if ($result) return $result;
+		return false;
+	}
 }
 ?>

@@ -20,9 +20,11 @@ class home extends Controller {
 	}
 	
 	function index(){
-
-		// pr($_SESSION);
-    	return $this->loadView('theme/bonfire2/home');
+		
+		$themeCurrent=$this->currentTheme();
+		
+		$viewTheme="theme/".$themeCurrent['option_value']."/home";
+    	return $this->loadView($viewTheme);
     }
 	
 	function test()

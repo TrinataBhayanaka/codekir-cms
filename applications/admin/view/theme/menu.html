@@ -67,7 +67,8 @@ $(document).on('change','#selectpicker',function(){
 				
 				if (data.status==true) {
 
-					$('#linkMenu').html(data.dataVal);	
+					$('#linkMenu').html(data.dataVal);
+					$('#idRefresh').selectpicker('refresh');	
 
 				}
 			}, "JSON")

@@ -1,26 +1,26 @@
 <script>
-$(document).ready(function() {
-	// $('#brief').summernote({
-	// 	height: 200
-	// });
-	$('#isi').summernote({
-		height: 200
-	});
-})	
+	$(document).ready(function() {
+		// $('#brief').summernote({
+		// 	height: 200
+		// });
+		$('#description').summernote({
+			height : 200
+		});
+	})
 </script>
 <!--Page Title-->
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <div id="page-title">
 	<h1 class="page-header text-overflow">Product Add</h1>
-	
+
 	<!--Searchbox-->
 	<!-- <div class="searchbox">
-		<div class="input-group custom-search-form">
-			<input type="text" class="form-control" placeholder="Search..">
-			<span class="input-group-btn">
-				<button class="text-muted" type="button"><i class="fa fa-search"></i></button>
-			</span>
-		</div>
+	<div class="input-group custom-search-form">
+	<input type="text" class="form-control" placeholder="Search..">
+	<span class="input-group-btn">
+	<button class="text-muted" type="button"><i class="fa fa-search"></i></button>
+	</span>
+	</div>
 	</div> -->
 </div>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
@@ -29,9 +29,15 @@ $(document).ready(function() {
 <!--Breadcrumb-->
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <ol class="breadcrumb">
-	<li><a href="{$basedomain}">Home</a></li>
-	<li><a href="{$basedomain}">Product</a></li>
-	<li class="active">Product Add</li>
+	<li>
+		<a href="{$basedomain}">Home</a>
+	</li>
+	<li>
+		<a href="{$basedomain}">Product</a>
+	</li>
+	<li class="active">
+		Product Add
+	</li>
 </ol>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <!--End breadcrumb-->
@@ -41,128 +47,240 @@ $(document).ready(function() {
 <div id="page-content">
 	<div class="row">
 		<div class="col-lg-12">
-			
-							<!--Default Tabs (Left Aligned)-->
-							<!--===================================================-->
-							<div class="tab-base">
-					
-								<!--Nav Tabs-->
-								<ul class="nav nav-tabs">
-									<li class="active">
-										<a data-toggle="tab" href="#demo-lft-tab-1">Product Info</a>
-									</li>
-									<li>
-										<a data-toggle="tab" href="#demo-lft-tab-2">Data</a>
-									</li>
-									<li>
-										<a data-toggle="tab" href="#demo-lft-tab-3">Image</a>
-									</li>
-								</ul>
-					
-								<!--Tabs Content-->
-								<div class="tab-content">
-									<div id="demo-lft-tab-1" class="tab-pane fade active in">
-										<div class="panel">
-								
-					
-								<!--Horizontal Form-->
-								<!--===================================================-->
-								<form class="form-horizontal">
-									<div class="panel-body">
-										<div class="form-group">
-											<label class="col-sm-2 control-label" for="demo-hor-inputemail">Name</label>
-											<div class="col-sm-9">
-												<input type="email" placeholder="Name" id="demo-hor-inputemail" class="form-control">
-											</div>
-										</div>
-										<div class="form-group">
-											<label class="col-sm-2 control-label" for="demo-hor-inputpass">Price</label>
-											<div class="col-sm-9">
-												<input type="password" placeholder="Password" id="demo-hor-inputpass" class="form-control">
-											</div>
-										</div>
-										<div class="form-group">
-											<label class="col-sm-2 control-label" for="demo-hor-inputpass">Description</label>
-											<div class="col-sm-9">
-												
-								<textarea name="isi" id="isi"></textarea>
-											</div>
-										</div>
-										
-										
-									</div>
-									<div class="panel-footer text-right">
-										<button class="btn btn-info" type="submit">Save Product</button>
-									</div>
-								</form>
-								<!--===================================================-->
-								<!--End Horizontal Form-->
-					
-							</div>
-									</div>
-									<div id="demo-lft-tab-2" class="tab-pane fade">
-										<div class="panel">
-								
-					
-								<!--Horizontal Form-->
-								<!--===================================================-->
-								<form class="form-horizontal">
-									<div class="panel-body">
-										<div class="form-group">
-											<label class="col-sm-2 control-label" for="demo-hor-inputemail">Model</label>
-											<div class="col-sm-9">
-												<input type="email" placeholder="Name" id="demo-hor-inputemail" class="form-control">
-											</div>
-										</div>
-										<div class="form-group">
-											<label class="col-sm-2 control-label" for="demo-hor-inputpass">Quantity</label>
-											<div class="col-sm-9">
-												<input type="password" placeholder="Password" id="demo-hor-inputpass" class="form-control">
-											</div>
-										</div>
-										<div class="form-group">
-											<label class="col-sm-2 control-label" for="demo-hor-inputpass">Sort Order</label>
-											<div class="col-sm-9">
-												<input type="password" placeholder="Password" id="demo-hor-inputpass" class="form-control">
-											</div>
-										</div>
 
-										<div class="form-group">
-											<label class="col-sm-2 control-label" for="demo-hor-inputpass">Weight</label>
-											<div class="col-sm-9">
-												<input type="password" placeholder="Password" id="demo-hor-inputpass" class="form-control">
-											</div>
+			<!--Default Tabs (Left Aligned)-->
+			<!--===================================================-->
+			<div class="tab-base">
+
+				<!--Nav Tabs-->
+				<ul class="nav nav-tabs">
+					<li class="active">
+						<a data-toggle="tab" href="#demo-lft-tab-1">Product Info</a>
+					</li>
+					<li>
+						<a data-toggle="tab" href="#demo-lft-tab-2">Data</a>
+					</li>
+					<li>
+						<a data-toggle="tab" href="#demo-lft-tab-3">Images</a>
+					</li>
+				</ul>
+
+				<!--Tabs Content-->
+				<form class="form-horizontal" method="post" action="{$basedomain}product/addProduct" enctype="multipart/form-data">
+				<div class="tab-content">
+
+						<div id="demo-lft-tab-1" class="tab-pane fade active in">
+							<div class="panel">
+
+								<!--Horizontal Form-->
+								<!--===================================================-->
+
+								<div class="panel-body">
+									<div class="form-group">
+										<label class="col-sm-2 control-label" for="parent">Category</label>
+										<div class="col-sm-9">
+											<select id="category" name="category" class="form-control">
+												<option value="0">None</option>
+												{foreach $categories as $category}
+												<option value="{$category.category_id}">{$category.name}</option>
+												{/foreach}
+											</select>
 										</div>
-										<div class="form-group">
-											<label class="col-sm-2 control-label" for="demo-hor-inputpass">Weight</label>
-											<div class="col-sm-9">
-												<input type="password" placeholder="Password" id="demo-hor-inputpass" class="form-control">
-											</div>
+									</div>
+									<div class="form-group">
+										<label class="col-sm-2 control-label" for="name">Product Name</label>
+										<div class="col-sm-9">
+											<input type="text" placeholder="Name" id="name" name="name" class="form-control" required>
 										</div>
-										
-										
-								</form>
+									</div>
+									<div class="form-group">
+										<label class="col-sm-2 control-label" for="description">Description</label>
+										<div class="col-sm-9">
+											<textarea name="description" id="description" required>
+											</textarea>
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="col-sm-2 control-label" for="meta_description">Meta Description</label>
+										<div class="col-sm-9">
+											<textarea name="meta_description" id="meta_description" class="form-control" required></textarea>
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="col-sm-2 control-label" for="meta_keywords">Meta Keywords
+											<br/>
+											(separate with comma)</label>
+										<div class="col-sm-9">
+											<textarea name="meta_keywords" id="meta_keywords" class="form-control" required></textarea>
+										</div>
+									</div>
+								</div>
+								<div class="panel-footer text-right">
+									<button class="btn btn-info" type="submit">
+										Save Product
+									</button>
+								</div>
+							</div>
+						</div>
+						<!--===================================================-->
+						<!--End Default Tabs (Left Aligned)-->
+						<div id="demo-lft-tab-2" class="tab-pane fade">
+							<div class="panel-body">
+								<div class="form-group">
+									<label class="col-sm-2 control-label" for="top">Model</label>
+									<div class="col-sm-9">
+										<input type="text" name="model" id="demo-hor-inputemail" class="form-control" >
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-2 control-label" for="column">SKU</label>
+									<div class="col-sm-9">
+										<input type="text" name="sku" id="demo-hor-inputpass" class="form-control" >
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-2 control-label" for="column">UPC</label>
+									<div class="col-sm-9">
+										<input type="text" name="upc" id="demo-hor-inputpass" class="form-control" >
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-2 control-label" for="column">EAN</label>
+									<div class="col-sm-9">
+										<input type="text" name="ean" id="demo-hor-inputpass" class="form-control" >
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-2 control-label" for="column">JAN</label>
+									<div class="col-sm-9">
+										<input type="text" name="jan" id="demo-hor-inputpass" class="form-control" >
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-2 control-label" for="column">ISBN</label>
+									<div class="col-sm-9">
+										<input type="text" name="isbn" id="demo-hor-inputpass" class="form-control" >
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-2 control-label" for="column">MPN</label>
+									<div class="col-sm-9">
+										<input type="text" name="mpn" id="demo-hor-inputpass" class="form-control" >
+									</div>
+								</div>
+								<hr />
+								<div class="form-group">
+									<label class="col-sm-2 control-label" for="weight">Weight</label>
+									<div class="col-sm-9">
+										<input type="number" name="weight" class="form-control">
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-2 control-label" for="weight_class">Weight Class</label>
+									<div class="col-sm-9">
+										<select name="weight_class">
+											<option value="kg">Kilogram</option>
+											<option value="g">Gram</option>
+											<option value="pound">Pound</option>
+										</select>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-2 control-label" for="length">Dimension</label>
+									<div class="col-sm-3">
+										<input type="number" name="length" class="form-control" placeholder="Length"> 
+									</div>
+									<div class="col-sm-3">
+										<input type="number" name="width" class="form-control" placeholder="Width"> 
+									</div>
+									<div class="col-sm-3">
+										<input type="number" name="height" class="form-control" placeholder="Height"> 
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-2 control-label" for="weight_class">Length Class</label>
+									<div class="col-sm-9">
+										<select name="weight_class">
+											<option value="m">Meter</option>
+											<option value="cm">Centimeter</option>
+											<option value="in">Inch</option>
+										</select>
+									</div>
+								</div>
+								<hr />
+								<div class="form-group">
+									<label class="col-sm-2 control-label" for="Location">Location</label>
+									<div class="col-sm-9">
+										<input type="text" name="location" id="demo-hor-inputpass" class="form-control" >
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-2 control-label" for="column">Price</label>
+									<div class="col-sm-9">
+										<input type="text" name="price" id="demo-hor-inputpass" class="form-control" >
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-2 control-label" for="column">Quantity</label>
+									<div class="col-sm-9">
+										<input type="text" name="quantity" id="demo-hor-inputpass" class="form-control"  value="1">
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-2 control-label" for="column">Minimum Quantity</label>
+									<div class="col-sm-9">
+										<input type="text" name="minimum" id="demo-hor-inputpass" class="form-control" value="1	">
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-2 control-label" for="column">Substract Stock</label>
+									<div class="col-sm-9">
+										<select name="substract" class="form-control">
+											<option value="1">Yes</option>
+											<option value="0">No</option>
+										</select>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-2 control-label" for="column">Requires shipping?</label>
+									<div class="col-sm-9">
+										<input type="radio" name="shipping" value="1" checked> Yes
+										&nbsp;
+										<input type="radio" name="shipping" value="0" > No
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-2 control-label" for="status">Status</label>
+									<div class="col-sm-9">
+										<select name="status" id="demo-hor-inputpass" class="form-control" required>
+											<option value="1">publish</option>
+											<option value="0">not publish</option>
+										</select>
+									</div>
+								</div>
+
 								<!--===================================================-->
 								<!--End Horizontal Form-->
-					
+
 							</div>
-									</div>
-									<div id="demo-lft-tab-3" class="tab-pane fade">
-										<h4 class="text-thin">Third Tab Content</h4>
-										<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+						</div>
+						<div id="demo-lft-tab-3" class="tab-pane fade">
+							<div class="panel-body">
+								<div class="form-group">
+									<label class="col-sm-2 control-label" for="image">Image</label>
+									<div class="col-sm-9">
+											<input type="file" name="gambar" id="gambar" class="form-control" required>
 									</div>
 								</div>
 							</div>
-							<!--===================================================-->
-							<!--End Default Tabs (Left Aligned)-->
+						</div>
 					
+				</div>
+				</form>
+			</div>
 
 		</div>
-	</div>
-	
-	
-	
+		<!--===================================================-->
+		<!--End page content-->
 </div>
-<!--===================================================-->
-<!--End page content-->
-
+</div>

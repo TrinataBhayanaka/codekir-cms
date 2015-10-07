@@ -21,6 +21,7 @@ class product extends Controller {
 	public function loadmodule()
 	{	
 		$this->mcategory = $this->loadModel('categoryHelper');
+		$this->mproduct = $this->loadModel('productHelper');
 	}
 	
 	public function index(){
@@ -32,9 +33,18 @@ class product extends Controller {
 
 	public function formAddProduct(){
 		
+		$getCategory = $this->mcategory->getParent();
+		
+		$this->view->assign('categories', $getCategory);
 
 		return $this->loadView('product/addProduct');
 
+	}
+	
+	public function addProduct(){
+		
+		$getProduct = $this->mproduct->addProduct();
+		
 	}
 	
 	public function formCatProduct(){
